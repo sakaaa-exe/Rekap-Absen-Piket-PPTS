@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rekap Absen Demo</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+            if (window.innerWidth < 1024) {
+                document.querySelector('meta[name="viewport"]').setAttribute(
+                    'content',
+                    'width=1024, initial-scale=1.0, maximum-scale=1.0'
+                );
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo1.png" alt="Logo Kiri" class="logo-left">
+        <div class="header-title">
+            <br>
+            <h2>YAYASAN PERSATUAN PERGURUAN TAMANSISWA</h2>
+            <h2>BERPUSAT DI YOGYAKARTA</h2>
+            <br>
+            <h2 class="h22">PERSATUAN PELAJAR TAMANSISWA</h2>
+            <h2 class="h22">TAMAN KARYA MADYA TEKNIK (TKMT)</h2>
+            <h2 class="h23">SMK TAMANSISWA 2</h2>
+            <p class="p1">Email : pptssmktamansiswa2jakarta@gmail.com <span style="color: white;">ㅤㅤ</span> Web : www.smktamansiswa2jakarta.sch.id</p>
+        </div>
+        <img src="logo3.jpg" alt="Logo Kanan" class="logo-right">
+    </div>
+
+    <div class="container">
+        <h1>Hasil Rekap Absen Rutinan PPTS (Demo)</h1>
+        <p style="text-align: center; color: #555; font-size: 0.9rem;">Hasil data absen piket sudah didata dengan baik dan benar tanpa adanya kesalahan informasi.</p>
+
+        <table class="rekap-table">
+            <thead>
+                <tr>
+                    <th rowspan="3">Hari, Tgl/Bulan</th>
+                    <th rowspan="3">Nama Anggota</th>
+                    <th colspan="4">Absen Piket</th>
+                    <th colspan="4">Keterangan</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Shift Pagi</th>
+                    <th colspan="2">Shift Siang</th>
+                    <th colspan="2">Timestamp Piket</th>
+                    <th colspan="2">Tanda Tangan</th>
+                </tr>
+                <tr>
+                    <th>Gerbang Depan</th>
+                    <th>Gerbang Belakang</th>
+                    <th>Gerbang Depan</th>
+                    <th>Gerbang Belakang</th>
+                    <th>Pagi</th>
+                    <th>Siang</th>
+                    <th>Pagi</th>
+                    <th>Siang</th>
+                </tr>
+            </thead>
+            <tbody id="rekap-table-body">
+                <!-- Data will be dynamically populated -->
+            </tbody>
+        </table>
+        <div><br><br>
+            <a href="komplenmaintanance.html">Komplain Tentang Piket</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

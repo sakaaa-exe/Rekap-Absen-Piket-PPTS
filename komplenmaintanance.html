@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komplain Piket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      overflow: hidden; /* Mencegah scrolling */
+      color: #fff;
+      position: relative; /* Memastikan posisi relatif untuk elemen fixed */
+    }
+
+    .container {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .error-code {
+      font-size: 120px;
+      font-weight: 600;
+      animation: bounce 1.5s infinite alternate;
+    }
+
+    .message {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .maintenance-info {
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #fff;
+      color: #2575fc;
+      font-weight: 600;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .bubble, .symbol, .star {
+      position: fixed; /* Perbaikan posisi */
+      bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bubble {
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: floatUp 6s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    .symbol {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.8);
+      animation: appearDisappear 4s infinite;
+    }
+
+    @keyframes appearDisappear {
+      0%, 100% { opacity: 0; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-20px); }
+    }
+
+    .meteor {
+      position: fixed; /* Perbaikan posisi */
+      width: 300px;
+      height: 1px;
+      transform: rotate(-45deg);
+      background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+      animation: meteor 9.1s linear infinite;
+    }
+
+    .meteor:before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 15px 3px #fff;
+      margin-top: -2px;
+    }
+
+    @keyframes meteor {
+      0% { margin-top: -300px; margin-right: -300px; opacity: 1; }
+      12% { opacity: 0; }
+      15% { margin-top: 300px; margin-left: -600px; opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .star {
+      font-size: 30px;
+      color: #fff;
+      opacity: 0;
+      animation: starGlow 3s ease-in-out infinite;
+      filter: blur(2px);
+    }
+
+    @keyframes starGlow {
+      0%, 100% {
+        opacity: 0;
+        filter: blur(1px);
+      }
+      50% {
+        opacity: 1;
+        filter: blur(3px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="message">Halaman yang Anda cari tidak ditemukan!</div>
+    <div class="maintenance-info">
+      Website ini sedang dalam tahap pengembangan. Harap kembali lagi nanti.
+    </div>
+    <a href="index.html" class="btn">Kembali ke Beranda</a>
+  </div>
+
+  <script>
+    const body = document.body;
+
+    function createMeteor() {
+      const meteor = document.createElement('div');
+      meteor.classList.add('meteor');
+      meteor.style.top = Math.random() * window.innerHeight + 'px';
+      meteor.style.left = Math.random() * window.innerWidth + 'px';
+      body.appendChild(meteor);
+      setTimeout(() => meteor.remove(), 6000);
+    }
+
+    function createBubble() {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = Math.random() * 100 + 'vw';
+      body.appendChild(bubble);
+      setTimeout(() => bubble.remove(), 6000);
+    }
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('symbol');
+      symbol.textContent = Math.random() > 0.5 ? '!' : '?';
+      symbol.style.left = Math.random() * 100 + 'vw';
+      symbol.style.top = Math.random() * 100 + 'vh';
+      body.appendChild(symbol);
+      setTimeout(() => symbol.remove(), 4000);
+    }
+
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.textContent = '✦';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      body.appendChild(star);
+      setTimeout(() => star.remove(), 3000);
+    }
+
+    setInterval(createMeteor, 800);
+    setInterval(createBubble, 300);
+    setInterval(createSymbol, 600);
+    setInterval(createStar, 1000);
+  </script>
+</body>
+</html>
