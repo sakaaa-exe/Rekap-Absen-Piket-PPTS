@@ -1,0 +1,421 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9f9;
+    min-width: 1024px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-block-end: 5px solid #88b5a1;
+}
+
+.h2 {
+    font-size: 1.1rem;
+    display: flex;
+    text-align: center;
+    color: #88b5a1;
+    margin: 0;
+}
+
+.he {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #88b5a1;
+    margin: 0;
+}
+
+.h22, .h23 {
+    color: #88b5a1;
+    margin: 0;
+}
+
+.h22 {
+    font-size: 1rem;
+}
+
+.h23 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.p1 {
+    color: #88b5a1;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.header-title {
+    text-align: center;
+}
+
+.logo-left {
+    height: 140px;
+    margin-left: 20px;
+}
+
+.logo-right {
+    height: 140px;
+    margin-bottom: 20px;
+}
+/* End Header */
+
+h1.center-text, 
+.description {
+    text-align: center;
+    color: #555;
+}
+
+h1.center-text {
+    font-size: 1.8rem;
+    color: #444;
+}
+
+.description {
+    font-size: 1rem;
+}
+
+/* Card */
+.card {
+    background-color: #f5f7fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    animation: zoomIn 0.8s ease-out;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Animasi Zoom-in */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Menu Container */
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #88b5a1;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Menu Content */
+.menu-content {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-content button#latestDateButton {
+    background: #f9d423;
+    color: #000;
+    font-weight: bold;
+}
+
+/* animasi highlight untuk baris */
+.highlight-row {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #ffff99; /* Kuning terang */
+    }
+    100% {
+        background-color: transparent; /* Transparan kembali */
+    }
+}
+
+.menu-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-content button {
+    background: #88b5a1;
+    border: none;
+    padding: 12px 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+.menu-content button:hover {
+    background: #6a9582;
+}
+
+.search-container {
+    margin: 2px 0;
+    text-align: center;
+}
+
+.search-container label {
+    font-size: 1rem;
+    color: #555;
+    margin-right: 10px;
+}
+
+.search-container input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+/* Table */
+.rekap-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rekap-table thead {
+    background-color: #88b5a1;
+    color: white;
+    text-align: center;
+}
+
+.rekap-table th, 
+.rekap-table td {
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.rekap-table tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.rekap-table tbody tr:hover {
+    background-color: #e8f5e9;
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* tabel Count */
+.rekap-count-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 2px solid #d8ede4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rekap-count-table thead {
+    background-color: #88b5a1;
+    color: white;
+    text-align: center;
+    border: 2px solid #d8ede4;
+}
+
+.rekap-count-table th, 
+.rekap-count-table td {
+    padding: 12px 6px;
+    text-align: center;
+    border: 2px solid #9fb5ac;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* perbaikan hover tabel */
+.rekap-count-table tbody tr {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+    position: relative;
+    border: 2px solid #d8ede4;
+}
+
+.rekap-count-table tbody tr:hover {
+    background-color: #e8f5e9;
+    transform: translateZ(0) scale(1.02); /* Efek tidak memengaruhi rowspan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Gaya pembeda untuk td dengan rowspan */
+.rekap-count-table tbody td[rowspan="2"] {
+    background-color: #b4d4c6; /* Warna latar belakang spesial */
+    font-weight: bold; /* Huruf lebih tebal */
+    border: 2px solid #d8ede4; /* Border lebih tebal */
+}
+
+/* Gaya untuk kolom dengan simbol ✔ */
+.rekap-count-table tbody td:contains("✔") {
+    background-color: #e8fbe5; /* Warna hijau muda */
+    color: #4caf50; /* Warna teks hijau */
+    font-weight: bold;
+}
+
+/* Gaya untuk kolom dengan simbol ✘ */
+.rekap-count-table tbody td:contains("✘") {
+    background-color: #ffe8e8; /* Warna merah muda */
+    color: #f44336; /* Warna teks merah */
+    font-weight: bold;
+}
+
+/* Simbol ✔ */
+.check-symbol {
+    background-color: #e8fbe5;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Simbol ✘ */
+.cross-symbol {
+    background-color: #ffe8e8;
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* styling untuk scroll-to-top button */
+.scroll-to-top {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #88b5a1;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+/* mengubah ukuran dan efek saat hover */
+.scroll-to-top:hover {
+    background-color: #88b5a1;
+    transform: scale(0.55);
+}
+
+/* styling untuk date-separator agar memiliki posisi relatif agar tombol tidak bergerak */
+.date-separator {
+    position: relative;
+    background-color: #d4ffd7 !important;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* Styling for the scroll-to-top button */
+.scroll-to-top {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+
+/* Red background for ✘ */
+.x-mark {
+    background-color: red;
+    color: white;
+}
+
+/* Green background for ✔ */
+.check-mark {
+    background-color: green;
+    color: white;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #88b5a1;
+    color: white;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.hidden-footer {
+    display: none; /* Awalnya disembunyikan */
+}

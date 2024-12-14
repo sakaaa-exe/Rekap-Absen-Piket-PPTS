@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Penghitungan Rekap</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+            if (window.innerWidth < 1024) {
+                document.querySelector('meta[name="viewport"]').setAttribute(
+                    'content',
+                    'width=1024, initial-scale=1.0, maximum-scale=1.0'
+                );
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo1.png" alt="Logo Tamansiswa" class="logo-left">
+        <div class="header-title">
+            <br>
+            <h2 class="h2">YAYASAN PERSATUAN PERGURUAN TAMANSISWA</h2>
+            <h2 class="he">BERPUSAT DI YOGYAKARTA</h2>
+            <br>
+            <h2 class="h22">PERSATUAN PELAJAR TAMANSISWA</h2>
+            <h2 class="h22">TAMAN KARYA MADYA TEKNIK (TKMT)</h2>
+            <h2 class="h23">SMK TAMANSISWA 2</h2>
+            <p class="p1">Email : pptssmktamansiswa2jakarta@gmail.com <span style="color: white;">ㅤㅤ</span> Web : www.smktamansiswa2jakarta.sch.id</p>
+        </div>
+        <img src="logo3.jpg" alt="Logo SMK Tawadu" class="logo-right">
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="menu-container">
+                <button class="menu-toggle" onclick="toggleMenu(event)">&#9776;</button>
+                <div class="menu-content hidden">
+                    <input 
+                        type="text" 
+                        id="findName" 
+                        placeholder="Cari Nama Anggota..." 
+                        oninput="findNameInTable()" 
+                        style="margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                    <div id="noResultsMessage" style="display: none; color: red; text-align: center; font-size: 16px;">Nama anggota tidak ada/nama anggota tidak valid</div>
+                    <button onclick="window.location.href='complaint.html'; closeMenu(event)">Kirim Komplain</button>
+                    <button id="toggleFooterButton" onclick="toggleFooter(); closeMenu(event)">Aktifkan Footer ✔</button>
+                    <button onclick="window.location.href='index.html'; closeMenu(event)">Kembali</button>
+                </div>
+            </div>
+        <h1 class="center-text">Penghitungan Rekap Absen</h1>
+        <p class="center-text description">
+            Tabel berikut menampilkan jumlah "✔" dan "✘" per anggota berdasarkan kolom absen.
+        </p>
+        <table class="rekap-count-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Nama Anggota</th>
+                    <th colspan="2">Shift Pagi</th>
+                    <th colspan="2">Shift Siang</th>
+                    <th colspan="2">Timestamp</th>
+                    <th colspan="2">Tanda Tangan</th>
+                    <th rowspan="2" style="padding: 25px;">Total</th>
+                </tr>
+                <tr>
+                    <th style="padding: 30px;">Gb Depan</th>
+                    <th>Gb Belakang</th>
+                    <th style="padding: 25px;">Gb Depan</th>
+                    <th>Gb Belakang</th>
+                    <th style="padding: 30px;">Pagi</th>
+                    <th style="padding: 25px;">Siang</th>
+                    <th style="padding: 30px;">Pagi</th>
+                    <th style="padding: 25px;">Siang</th>
+                </tr>
+            </thead>
+            <tbody id="rekap-count-body">
+                <!--data-->
+            </tbody>
+        </table>
+        </div>
+    </div><br><br><br>
+    <footer id="footer" class="hidden-footer">
+        <p>Hak Cipta &copy; 2024 SMK Tamansiswa 2 Jakarta. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
