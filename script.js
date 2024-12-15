@@ -1180,14 +1180,14 @@ const tableData = [
     {
         date: "Jumat, 15/11",
         name: "Rizky Saputra",
-        pagiDepan: "✔✘",
+        pagiDepan: "✘",
         pagiBelakang: "-",
-        siangDepan: "✔✘",
+        siangDepan: "✘",
         siangBelakang: "-",
-        tpagi: "✔✘",
-        tsiang: "✔✘",
-        tdpagi: "✔✘",
-        tdsiang: "✔✘"
+        tpagi: "✘",
+        tsiang: "✘",
+        tdpagi: "✘",
+        tdsiang: "✘"
     },
     {
         date: "Jumat, 15/11",
